@@ -32,7 +32,7 @@ body {
         }
     }
     .main{
-        height: 73vh;
+        height: 55vh;
     }
     .footer{
         display: flex;
@@ -47,4 +47,24 @@ body {
 
     color: black;
     background-color: rgb(247, 215, 209);
+}
+
+.carrito{
+    padding-right: .5rem;
+    &:hover{
+        cursor: pointer;
+        color:white;
+    }
+}
+
+.mensaje{
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin: auto;
+    max-width: 50%;
+    padding: 3rem;
+    text-align: center;
+    background-color: #1B7111;
+    color:white;
+    border-radius: 15px;
 }

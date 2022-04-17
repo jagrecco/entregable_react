@@ -6,8 +6,8 @@ const Header = () => {
       <header className="header">
         
         <h1 className="header__titulo">Oleo</h1>
-      
-          <NavBar/>
+          
+          <NavBar carrito={true}/>
 
       </header>
     </>
