@@ -1,7 +1,7 @@
 
 const CartWidjet = () => {
   return (
-    <span class="material-icons carrito">shopping_cart</span>
+    <span className="material-icons carrito">shopping_cart</span>
 
   )
 }

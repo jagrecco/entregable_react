@@ -12,7 +12,7 @@ const App=() => {
     return (
         <>
             <Header/>
-            <ItemListContainer greeting="Bienvenidos a Oleo!"/>
+            <ItemListContainer greeting="¡Bienvenidos a Oleo!"/>
             <Main/>
             <Footer/>
         </>
