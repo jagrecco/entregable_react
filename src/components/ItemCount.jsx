@@ -2,9 +2,6 @@ import { useState } from "react"
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
-/* const cantidadDeItems = useState(initial) */
-/* const cuantosAgregar=cantidadDeItems[0]
-const setCuantosAgregar=cantidadDeItems[1] */
 
 const [cuantosAgregar, setCuantosAgregar]=useState(initial)
 

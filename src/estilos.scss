@@ -112,3 +112,32 @@ body {
     padding: .5rem 7.2rem;
     background-color: #9AEB7F;
 }
+
+.productos{
+    margin: 2rem;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    overflow: hidden;
+}
+.item{
+    padding: 1rem;
+    width: 25vw;
+    border: 2px solid #1B7111;
+    box-shadow: 5px 5px #d3e8cc;
+    border-radius: 5px;
+
+    &Titulo{
+        text-align: center;
+        font-weight: bold;
+    }
+    &Precio{
+        margin: 1rem ;
+        text-align: center;
+        font-weight: bold;
+    }
+    &Img{
+        width: 100%;
+    }
+}
