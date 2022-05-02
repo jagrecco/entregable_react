@@ -32,7 +32,7 @@ body {
         }
     }
     .main{
-        height: 55vh;
+        height: 25vh;
     }
     .footer{
         display: flex;
@@ -71,11 +71,11 @@ body {
 
 
 .contador{
-    border: 2px solid #1B7111;
-    border-radius: 15px;
-    width: 20vw;
+    border: .5px solid #1B7111;
+    border-radius: 10px;
+    width: 15vw;
     margin: auto;
-    margin-top: 3rem;
+    margin-top: 1rem;
     padding: 1rem 0;
 }
 
@@ -86,7 +86,7 @@ body {
 
 .boton{
     border: none;
-    padding: 0 2rem;
+    padding: 0 1.3rem;
     background-color: #9AEB7F;
 }
 
@@ -109,35 +109,48 @@ body {
 .agregarAlCarrito{
     margin: auto;
     border: none;
-    padding: .5rem 7.2rem;
+    padding: .5rem 5.8rem;
     background-color: #9AEB7F;
 }
 
 .productos{
-    margin: 2rem;
-    width: 100vw;
+    padding-top: 3rem;
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
     overflow: hidden;
 }
 .item{
     padding: 1rem;
-    width: 25vw;
-    border: 2px solid #1B7111;
-    box-shadow: 5px 5px #d3e8cc;
-    border-radius: 5px;
+    width: 18vw;
+    border: .5px solid #1B7111;
+    box-shadow: 3px 5px #d3e8cc;
+    border-radius: 10px;
 
     &Titulo{
         text-align: center;
         font-weight: bold;
+        color: #1B7111;;
     }
     &Precio{
         margin: 1rem ;
         text-align: center;
         font-weight: bold;
+        color: #1B7111;
     }
     &Img{
         width: 100%;
+        
     }
+}
+
+.detalle{
+    margin: 1rem 2rem;
+    padding: 1rem 1rem;
+    max-width: 50%;
+    font-style: italic;
+    border: .5px solid #1B7111;
+    box-shadow: 3px 3px #d3e8cc;
 }
