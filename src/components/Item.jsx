@@ -11,7 +11,7 @@ const Item = ({producto}) => {
       <h3 className="itemTitulo">{producto.title}</h3>
       <img className="itemImg" src={producto.imgUrl} alt="imagen"/>
       <p className="itemPrecio">${producto.price}</p>
-      <button className="detalles" onClick={verDetalles(producto.id)}>Detalles</button>
+      <button className="detalles" onClick={()=>{verDetalles(producto.id)}}>Detalles</button>
     </article>
     
     </>

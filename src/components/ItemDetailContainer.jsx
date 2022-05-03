@@ -56,7 +56,7 @@ const ItemDetailContainer = () => {
 
             setTimeout(() => {
               res([arrayProductos])
-              }, 2000);
+              }, 3000);
             })
         
             pedido
@@ -70,7 +70,7 @@ const ItemDetailContainer = () => {
   {
     return(
       <>
-      <p>Cargando...</p>
+      {/* <p>Cargando...</p> */}
       </>
     )
   } else{
