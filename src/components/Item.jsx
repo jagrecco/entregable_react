@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 
 const verDetalles = (cual) =>{
 console.log("paso por aca " + cual)
@@ -11,7 +12,10 @@ const Item = ({producto}) => {
       <h3 className="itemTitulo">{producto.title}</h3>
       <img className="itemImg" src={producto.imgUrl} alt="imagen"/>
       <p className="itemPrecio">${producto.price}</p>
-      <button className="detalles" onClick={()=>{verDetalles(producto.id)}}>Detalles</button>
+      {/* <Link to={`/producto/${producto.id}`}>Detalles</Link> */}
+      <Link to={`/productos/:id`}>Detalles</Link>
+      
+      
     </article>
     
     </>

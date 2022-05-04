@@ -32,7 +32,7 @@ body {
         }
     }
     .main{
-        height: 25vh;
+        
     }
     .footer{
         display: flex;
@@ -51,6 +51,7 @@ body {
 
 .carrito{
     padding-right: .5rem;
+    color: #1B7111;
     &:hover{
         cursor: pointer;
         color:white;

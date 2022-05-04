@@ -70,7 +70,7 @@ const ItemDetailContainer = () => {
   {
     return(
       <>
-      {/* <p>Cargando...</p> */}
+      <p>Cargando...</p>
       </>
     )
   } else{

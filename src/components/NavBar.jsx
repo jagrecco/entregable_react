@@ -1,5 +1,7 @@
 
-import CartWidjet from "./CartWidjet";
+import CartWidjet from "./CartWidjet"
+
+import {Link} from 'react-router-dom'
 
 
 function NavBar(props) {
@@ -10,19 +12,22 @@ function NavBar(props) {
 
     return (
       <nav className="nav__menu">
-          <a href="#" className="nav__links">Inicio</a>
-          <a href="#" className="nav__links">Catálogo</a>
-          <a href="#" className="nav__links">Contacto</a>
-        <CartWidjet/>
+          <CartWidjet/>
+          <Link to="/" className="nav__links">Inicio</Link>
+          <Link to="/productos/:nombreCat" className="nav__links">Catálogo</Link>
+          <Link to="/aceites" className="nav__links">Aceites</Link>
+          <Link to="/varios" className="nav__links">Varios</Link>
+        
       </nav>
     )
   } else {
     return (
       <nav className="nav__menu">
         
-          <a href="#" className="nav__links">Inicio</a>
-          <a href="#" className="nav__links">Catálogo</a>
-          <a href="#" className="nav__links">Contacto</a>
+          <Link to="/" className="nav__links">Inicio</Link>
+          <Link to="/productos/:nombreCat" className="nav__links">Catálogo</Link>
+          <Link to="/aceites" className="nav__links">Aceites</Link>
+          <Link to="/varios" className="nav__links">Varios</Link>
       </nav>
     )
   }

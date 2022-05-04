@@ -8,6 +8,7 @@ import oleo2 from "./assets/producto-aceite-finca-san-quinti-2.png"
 import oleo3 from "./assets/producto-aceite-finca-san-quinti-3.png"
 import oleo4 from "./assets/producto-aceite-finca-san-quinti-4.png"
 import oleo5 from "./assets/producto-aceite-finca-san-quinti-5.png"
+import BeatLoader from "react-spinners/BeatLoader"
 /* import arrayProductos from "./assets/inventario.json" */
 
 export const arrayProductos = [
@@ -77,6 +78,7 @@ const ItemListContainer = (props) => {
   {
     return(
       <>
+        <BeatLoader/>
         <p>Cargando...</p>
         <p className="mensaje">
           {mensaje}
