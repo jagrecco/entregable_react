@@ -17,6 +17,9 @@ body {
             color: #1B7111;
             font-weight: bolder;
         }
+        &__link{
+            text-decoration: none;
+        }
 
     }
     
@@ -32,13 +35,16 @@ body {
         }
     }
     .main{
-        
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .footer{
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0 1.5rem;
+        margin-top: 2rem;
         text-align: center;
         height: 12vh;
         background-color: #9AEB7F;
@@ -124,6 +130,8 @@ body {
     overflow: hidden;
 }
 .item{
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
     width: 18vw;
     border: .5px solid #1B7111;
@@ -136,22 +144,47 @@ body {
         color: #1B7111;;
     }
     &Precio{
-        margin: 1rem ;
+        margin: .5rem ;
         text-align: center;
         font-weight: bold;
         color: #1B7111;
     }
     &Img{
-        width: 100%;
-        
+        margin: auto;
+        width: 70%;
+    }
+    &_detalles{
+        text-decoration: none;
+        text-align: center;
+        color: #1B7111;
+        font-weight: bold;
     }
 }
 
 .detalle{
-    margin: 1rem 2rem;
-    padding: 1rem 1rem;
-    max-width: 50%;
-    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    width: 25vw;
     border: .5px solid #1B7111;
-    box-shadow: 3px 3px #d3e8cc;
+    box-shadow: 3px 5px #d3e8cc;
+    border-radius: 10px;
+    &_detalle{
+        margin: auto;
+        margin-top: .5rem;
+        padding: .5rem 0;
+        font-style: italic;
+        font-size: .8rem;
+    }
+    &_itemImg{
+        margin: auto;
+        width: 70%;
+    }
+    &_link{
+        text-decoration: none;
+        text-align: center;
+        color: #1B7111;
+        font-weight: bold;
+    }
 }

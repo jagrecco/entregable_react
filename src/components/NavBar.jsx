@@ -3,6 +3,10 @@ import CartWidjet from "./CartWidjet"
 
 import {Link} from 'react-router-dom'
 
+const aceites=0
+const varios=1
+const todos=100
+
 
 function NavBar(props) {
 
@@ -13,21 +17,18 @@ function NavBar(props) {
     return (
       <nav className="nav__menu">
           <CartWidjet/>
-          <Link to="/" className="nav__links">Inicio</Link>
-          <Link to="/productos/:nombreCat" className="nav__links">Catálogo</Link>
-          <Link to="/aceites" className="nav__links">Aceites</Link>
-          <Link to="/varios" className="nav__links">Varios</Link>
+          <Link to={`/categorias/${todos}`} className="nav__links">Inicio</Link>
+          <Link to={`/categorias/${aceites}`} className="nav__links">Aceites</Link>
+          <Link to={`/categorias/${varios}`} className="nav__links">Varios</Link>
         
       </nav>
     )
   } else {
     return (
       <nav className="nav__menu">
-        
-          <Link to="/" className="nav__links">Inicio</Link>
-          <Link to="/productos/:nombreCat" className="nav__links">Catálogo</Link>
-          <Link to="/aceites" className="nav__links">Aceites</Link>
-          <Link to="/varios" className="nav__links">Varios</Link>
+        <Link to={`/categorias/${todos}`} className="nav__links">Inicio</Link>
+        <Link to={`/categorias/${aceites}`} className="nav__links">Aceites</Link>
+        <Link to={`/categorias/${varios}`} className="nav__links">Varios</Link>
       </nav>
     )
   }

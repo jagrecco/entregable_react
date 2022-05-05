@@ -12,10 +12,8 @@ const Item = ({producto}) => {
       <h3 className="itemTitulo">{producto.title}</h3>
       <img className="itemImg" src={producto.imgUrl} alt="imagen"/>
       <p className="itemPrecio">${producto.price}</p>
-      {/* <Link to={`/producto/${producto.id}`}>Detalles</Link> */}
-      <Link to={`/productos/:id`}>Detalles</Link>
       
-      
+      <Link className="item_detalles" to={`/productos/${producto.id}`}>Detalles</Link>
     </article>
     
     </>
