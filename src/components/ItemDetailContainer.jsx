@@ -22,7 +22,7 @@ const arrayProductos = [
   detalle: "Aceite por 1/2 l, botella de vidrio premium. Nuestro blend exquisito logra el equilibrio perfecto de aceitunas maduras y verdes, lo que le confiere a Finca San Quintí un sutil aroma y gusto frutado, resaltando las características distintivas y únicas del método tradicional de prensa en frío.",
   imgUrl: oleo1,
   categoria:0,
-  stock:10
+  stock:9
   },
   {
   id:1,
@@ -31,7 +31,7 @@ const arrayProductos = [
   detalle: "Aceite por 500ccm, botella plástica. Nuestro blend exquisito logra el equilibrio perfecto de aceitunas maduras y verdes, lo que le confiere a Finca San Quintí un sutil aroma y gusto frutado, resaltando las características distintivas y únicas del método tradicional de prensa en frío.",
   imgUrl: oleo2,
   categoria:0,
-  stock:10
+  stock:8
   },
   {
   id:2,
@@ -40,7 +40,7 @@ const arrayProductos = [
   detalle: "Aceite por un litro, botella plástica. Nuestro blend exquisito logra el equilibrio perfecto de aceitunas maduras y verdes, lo que le confiere a Finca San Quintí un sutil aroma y gusto frutado, resaltando las características distintivas y únicas del método tradicional de prensa en frío.",
   imgUrl: oleo3,
   categoria:0,
-  stock:10
+  stock:19
   },
   {
   id:3,
@@ -49,7 +49,7 @@ const arrayProductos = [
   detalle: "Aceite por 2000ccm, botella de plástica. Nuestro blend exquisito logra el equilibrio perfecto de aceitunas maduras y verdes, lo que le confiere a Finca San Quintí un sutil aroma y gusto frutado, resaltando las características distintivas y únicas del método tradicional de prensa en frío.",
   imgUrl: oleo4,
   categoria:0,
-  stock:10
+  stock:6
   },
   {
   id:4,
@@ -58,7 +58,7 @@ const arrayProductos = [
   detalle: "Aceite por 5000ccm, bidón de plástico. Nuestro blend exquisito logra el equilibrio perfecto de aceitunas maduras y verdes, lo que le confiere a Finca San Quintí un sutil aroma y gusto frutado, resaltando las características distintivas y únicas del método tradicional de prensa en frío.",
   imgUrl: oleo5,
   categoria:0,
-  stock:10
+  stock:5
   },
   {
     id:5,
@@ -67,7 +67,7 @@ const arrayProductos = [
     detalle: "Aceto Balsámico elaborado con materia prima de calidad, con uvas seleccionadas de la zona. Su evolución se acompaña con cuidados personalizados producto equilibrado de sabor y aroma sutil.",
     imgUrl: oleo6,
     categoria:1,
-    stock:10
+    stock:3
   },
   {
     id:6,
@@ -76,7 +76,7 @@ const arrayProductos = [
     detalle: "Almendras Nonpareil de 1° calidad cosechadas en San Juan. Ofrecemos también almendras marcadas y almendras partidas.",
     imgUrl: oleo7,
     categoria:1,
-    stock:10
+    stock:9
   },
   {
     id:7,
@@ -85,7 +85,7 @@ const arrayProductos = [
     detalle: "Tomate seco de primera calidad de San Juan. Cosechado y secado al sol en forma natural. Seleccionado y envasado para exportación.",
     imgUrl: oleo8,
     categoria:1,
-    stock:10
+    stock:2
   }
   ]
 

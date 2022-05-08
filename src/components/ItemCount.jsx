@@ -33,16 +33,16 @@ AgregaAlCarrito = ()=>{
   return (
 
     <>
-
     <div className="contador">
-        <div className="agregar">
-            <button className="boton" onClick={RestaUno}><span className="material-icons iconos">remove</span></button>
-            <p className="cantidad iconos">{cuantosAgregar}</p>
-            <button className="boton" onClick={SumaUno}><span className="material-icons iconos">add</span></button>
+        <div className="contador_agregar">
+            <button className="contador_boton" onClick={RestaUno}><span className="material-icons iconos">remove</span></button>
+            <p className="contador_cantidad contador_iconos">{cuantosAgregar}/{maximo}</p>
+            <button className="contador_boton" onClick={SumaUno}><span className="material-icons iconos">add</span></button>
         </div>
-    <div className="agregarBoton">
-        {<button className="agregarAlCarrito" onClick={AgregaAlCarrito}><span className="material-icons iconos">add_shopping_cart</span></button>}
-    </div>
+            <div className="contador_agregarBoton">
+                {<button className="contador_agregarAlCarrito" onClick={AgregaAlCarrito}><span className="material-icons iconos">add_shopping_cart</span></button>}
+            </div>
+
 
     </div>
 
