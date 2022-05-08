@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 const aceites=0
 const varios=1
-const todos=100
+const todos=undefined
 
 
 function NavBar(props) {
@@ -17,7 +17,7 @@ function NavBar(props) {
     return (
       <nav className="nav__menu">
           <CartWidjet/>
-          <Link to={`/categorias/${todos}`} className="nav__links">Inicio</Link>
+          <Link to={`/`} className="nav__links">Inicio</Link>
           <Link to={`/categorias/${aceites}`} className="nav__links">Aceites</Link>
           <Link to={`/categorias/${varios}`} className="nav__links">Varios</Link>
         
@@ -26,7 +26,7 @@ function NavBar(props) {
   } else {
     return (
       <nav className="nav__menu">
-        <Link to={`/categorias/${todos}`} className="nav__links">Inicio</Link>
+        <Link to={`/`} className="nav__links">Inicio</Link>
         <Link to={`/categorias/${aceites}`} className="nav__links">Aceites</Link>
         <Link to={`/categorias/${varios}`} className="nav__links">Varios</Link>
       </nav>

@@ -22,7 +22,12 @@ const RestaUno = ()=>{
 }
 
 AgregaAlCarrito = ()=>{
-    cuantosAgregar>0 & cuantosAgregar<=5 && console.log(cuantosAgregar)
+
+    if (cuantosAgregar>0)
+    {
+        onAdd(cuantosAgregar)
+    }
+
 }
 
   return (

@@ -11,7 +11,7 @@ const Item = ({producto}) => {
     <article className="item">
       <h3 className="itemTitulo">{producto.title}</h3>
       <img className="itemImg" src={producto.imgUrl} alt="imagen"/>
-      <p className="itemPrecio">${producto.price}</p>
+      <p className="itemPrecio">${producto.price}.-</p>
       
       <Link className="item_detalles" to={`/productos/${producto.id}`}>Detalles</Link>
     </article>

@@ -1,23 +1,57 @@
 import ItemCount from './ItemCount'
 import {Link} from 'react-router-dom'
+import { useState } from "react"
 
-const categoriaId=100
+let mandarAlCarrito=0
+let precioTotal=0
 
-{/* <p className="detalle">{props.item.detalle}</p> */}
 
 const ItemDetail = (props) => {
+  
+  const FuncionAgregar = (agregadoAlCarrito)=>{
+
+    console.log("Se agrearon " + agregadoAlCarrito + " al carrito")
+    mandarAlCarrito=agregadoAlCarrito
+    precioTotal=props.item.price * mandarAlCarrito
+
+    setMuestraContador(false)
+  }
+  const  [muestraContador, setMuestraContador] = useState(true)
     
-  return (
-    <article className="detalle">
-      <h3 className="itemTitulo">{props.item.title}</h3>
-      <img className="detalle_itemImg" src={props.item.imgUrl} alt="imagen"/>
-      <p className="itemPrecio">${props.item.price}</p>
-      <p className="detalle_detalle">{props.item.detalle}</p>
-      <ItemCount />
-      <Link className="detalle_link" to={`/categorias/${categoriaId}`}>Volver al catálogo</Link>
-    </article>
-    
-  )
+  if (muestraContador)
+      {
+        return (
+
+          <article className="detalle">
+            <h3 className="itemTitulo">{props.item.title}</h3>
+            <img className="detalle_itemImg" src={props.item.imgUrl} alt="imagen"/>
+            <p className="itemPrecio">${props.item.price}.-</p>
+            <p className="detalle_detalle">{props.item.detalle}</p>
+      
+            <ItemCount stock={props.item.stock} initial={0} onAdd={FuncionAgregar}/>
+            <Link className="detalle_link" to={`/`}>Volver al catálogo</Link>
+          </article>
+          
+        )
+      } else
+      {
+        return (
+          <article className="detalle">
+            <h3 className="itemTitulo">{props.item.title}</h3>
+            <img className="detalle_itemImg" src={props.item.imgUrl} alt="imagen"/>
+            <p className="itemPrecio">${props.item.price}</p>
+            <p className="detalle_detalle">{props.item.detalle}</p>
+      
+            <p className="detalle_Compra">Se agregaron {mandarAlCarrito} items a la compra</p>
+            <p className="detalle_Precio">Precio total $ {precioTotal}.-</p>
+
+            <Link className="detalle_link" to={`/`}>Volver al catálogo y cancelar</Link>
+            <Link className="detalle_link" to={`/carrito`}>Confirmar Compra</Link>
+          </article>
+          
+        )
+      }
+
 }
 
 export default ItemDetail

@@ -79,8 +79,8 @@ body {
 
 .contador{
     border: .5px solid #1B7111;
-    border-radius: 10px;
-    width: 15vw;
+    border-radius: 5px;
+    width: 100%;
     margin: auto;
     margin-top: 1rem;
     padding: 1rem 0;
@@ -135,8 +135,12 @@ body {
     padding: 1rem;
     width: 18vw;
     border: .5px solid #1B7111;
-    box-shadow: 3px 5px #d3e8cc;
+    /* box-shadow: 3px 5px #d3e8cc; */
     border-radius: 10px;
+    &:hover{
+        box-shadow: 4px 4px #d3e8cc;
+        border: 3px solid #1B7111;
+    }
 
     &Titulo{
         text-align: center;
@@ -154,10 +158,22 @@ body {
         width: 70%;
     }
     &_detalles{
+       /*  text-decoration: none;
+        text-align: center;
+        color: #1B7111;
+        font-weight: bold; */
+        margin-top: .3rem;
         text-decoration: none;
         text-align: center;
         color: #1B7111;
         font-weight: bold;
+        border: 1px solid #1B7111;
+        border-radius: 3px;
+        padding: .5rem;
+        &:hover{
+            background-color: #1B7111;
+            color: white;
+        }
     }
 }
 
@@ -182,9 +198,31 @@ body {
         width: 70%;
     }
     &_link{
+        margin-top: .3rem;
         text-decoration: none;
         text-align: center;
         color: #1B7111;
         font-weight: bold;
+        border: 1px solid #1B7111;
+        border-radius: 3px;
+        padding: .5rem;
+        &:hover{
+            background-color: #1B7111;
+            color: white;
+        }
+    }
+    &_Compra{
+        padding-top: .3rem;
+        text-align: center;
+        color: #1B7111;
+        font-weight: bolder;
+        margin: 0;
+    }
+    &_Precio{
+        background-color: #1B7111;
+        text-align: center;
+        color: white;
+        font-weight: bolder;
+        font-size: 1.5rem;
     }
 }
