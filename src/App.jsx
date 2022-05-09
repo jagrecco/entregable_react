@@ -5,15 +5,18 @@ import Main from "./components/Main";
 
 import {BrowserRouter} from "react-router-dom"
 import {Routes, Route} from "react-router-dom"
+import MiContexto from "./components/Contexto";
 
 const App=() => {
     return (
-        
-        <BrowserRouter>
+
+    <BrowserRouter>
+        <MiContexto>
             <Header/>
             <Main/>
             <Footer/>
-        </BrowserRouter>
+        </MiContexto>
+    </BrowserRouter>
         
         ) 
         

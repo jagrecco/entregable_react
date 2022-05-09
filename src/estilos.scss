@@ -56,11 +56,20 @@ body {
 }
 
 .carrito{
-    padding-right: .5rem;
+    padding-right: 0rem;
     color: #1B7111;
     &:hover{
         cursor: pointer;
         color:white;
+    }
+    &_link{
+        margin-right: .5rem;
+        text-decoration: none;       
+        color: #1B7111;
+        &:hover{
+            cursor: pointer;
+            color:white;
+        }
     }
 }
 

@@ -1,12 +1,16 @@
 import ItemCount from './ItemCount'
 import {Link} from 'react-router-dom'
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { contexto } from './Contexto'
+
 
 let mandarAlCarrito=0
 let precioTotal=0
 
 
 const ItemDetail = (props) => {
+
+  const {agregarProducto}=useContext(contexto)
   
   const FuncionAgregar = (agregadoAlCarrito)=>{
 
@@ -15,6 +19,10 @@ const ItemDetail = (props) => {
     precioTotal=props.item.price * mandarAlCarrito
 
     setMuestraContador(false)
+  }
+
+  const confimaCompra=()=>{
+    /* aca va el callback agregarProducto con los parametros del producto, cantidad y precio */
   }
   const  [muestraContador, setMuestraContador] = useState(true)
     
@@ -46,7 +54,7 @@ const ItemDetail = (props) => {
             <p className="detalle_Precio">Precio total $ {precioTotal}.-</p>
 
             <Link className="detalle_link" to={`/`}>Volver al catálogo y cancelar</Link>
-            <Link className="detalle_link" to={`/carrito`}>Confirmar Compra</Link>
+            <Link className="detalle_link" to={`/carrito`} onClick={confimaCompra}>Confirmar Compra</Link>
           </article>
           
         )
