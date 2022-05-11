@@ -110,6 +110,7 @@ const ItemDetailContainer = () => {
               .then(()=>{
                 setCargo(false)
                 setProd(arrayProductos[productoId])
+                
               })
     },[productoId])
     

@@ -5,13 +5,33 @@ import { contexto } from './Contexto'
 
 const Carrito = () => {
 
-  const {carrito, precioTotal,vaciarCarro}=useContext(contexto)
+  const {carrito, precioTotal, cantidadItems, vaciarCarro}=useContext(contexto)
 
   return (
-    <>
-      <h3 className='carrito'>Estoy en el carrito</h3><br/>
-      <p className="carrito_precio">{precioTotal}</p>
-    </>
+      <div className="carro">
+        <h3 className='carro_titulo'>Carrito</h3>
+        
+        <ul className="carro_lista">
+
+            {carrito.map(elemento => {
+              return (
+                <div className="carro_detalle">
+                  <li key={elemento.id}>
+                    {elemento.id} {elemento.title} -- ${elemento.price}
+                  </li>
+            
+                </div>
+          )
+
+        })}
+        
+        </ul>
+
+        <p className="carro_total">{cantidadItems} items, precio total ${precioTotal}.-</p>
+
+      </div>
+
+    
   )
 }
 
