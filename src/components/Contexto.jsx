@@ -12,26 +12,41 @@ const MiContexto=({children})=>{
 
     const agregarProducto=(producto, cantidad, precioT)=>{
 
-        const carroTemporal=carro.slice(0)
-        carroTemporal.push(producto)
-        setCarro(carroTemporal)
+        const estaEnCarrito=carro.filter(elemento => elemento.id==producto.id).length
+        
+        if (estaEnCarrito){
 
-        setCantidadItems(cantidadItems+cantidad)
+            console.log("Ya esta en el Carrito")
 
-        setprecioTotal(precioTotal+precioT)
+        } else
+        {
+            const carroTemporal=carro.slice(0)
+            carroTemporal.push(producto)
+            setCarro(carroTemporal)
+    
+            setCantidadItems(cantidadItems+cantidad)
+    
+            setprecioTotal(precioTotal+precioT)
+        }
 
     }
 
     const eliminarProducto=(idProducto)=>{
 
+
     }
     
     const enCarrito=(producto)=>{
+
+        const estaEnCarrito=carro.filter(elemento => elemento.id==producto.id).length
+
 
     }
     
     const vaciarCarro=()=>{
         setCarro([])
+        setCantidadItems(0)
+        setprecioTotal(0)
      }
 
     const valorContexto = {

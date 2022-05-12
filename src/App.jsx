@@ -7,6 +7,9 @@ import {BrowserRouter} from "react-router-dom"
 import {Routes, Route} from "react-router-dom"
 import MiContexto from "./components/Contexto";
 
+import { FirebaseApp } from "firebase/app";
+
+
 const App=() => {
     return (
 
