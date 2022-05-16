@@ -10,10 +10,10 @@ let precioTotal=0
 const ItemDetail = ({item}) => {
 
   const {agregarProducto}=useContext(contexto)
-  
+    
   const FuncionAgregar = (agregadoAlCarrito)=>{
 
-    console.log("Se agrearon " + agregadoAlCarrito + " al carrito")
+    /* console.log("Se agrearon " + agregadoAlCarrito + " al carrito") */
     mandarAlCarrito=agregadoAlCarrito
     precioTotal=item.price * mandarAlCarrito
 
@@ -21,7 +21,15 @@ const ItemDetail = ({item}) => {
   }
 
   const confimaCompra=(producto, cantidad, precioT)=>{
-    agregarProducto(producto, cantidad, precioT)
+
+    const p={
+      id: producto.id,
+      title: producto.title,
+      price: parseInt(producto.price),
+      imgUrl: producto.imgUrl,
+      cantidad: parseInt(cantidad)}
+
+    agregarProducto(p, parseInt(cantidad), parseInt(precioT))
   }
 
   const  [muestraContador, setMuestraContador] = useState(true)
@@ -31,7 +39,7 @@ const ItemDetail = ({item}) => {
         return (
 
           <article className="detalle">
-            {/* <h3 className="itemTitulo">{props.item.title}</h3> */}
+            
             <h3 className="itemTitulo">{item.title}</h3>
             <img className="detalle_itemImg" src={item.imgUrl} alt="imagen"/>
             <p className="itemPrecio">${item.price}.-</p>
@@ -55,7 +63,7 @@ const ItemDetail = ({item}) => {
             <p className="detalle_Precio">Precio total $ {precioTotal}.-</p>
 
             <Link className="detalle_link" to={`/`}>Volver al catálogo y cancelar</Link>
-            <Link className="detalle_link" to={`/`} onClick={()=>confimaCompra(item, mandarAlCarrito, precioTotal)}>Confirmar Compra</Link>
+            <Link className="detalle_link" to={`/`} onClick={()=>confimaCompra(item, mandarAlCarrito, precioTotal)}>Agregar al carrito</Link>
           </article>
           
         )

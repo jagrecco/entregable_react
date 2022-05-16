@@ -73,6 +73,101 @@ body {
     }
 }
 
+.carro{
+    width: 40vw;
+    margin-top: 2rem;
+    padding: 2rem;
+    border: .5px solid #1B7111;
+    border-radius: 5px;
+
+    &_titulo{
+        background-color: #1B7111;
+        color: white;
+        padding: .5rem;
+    }
+
+    &_lista{
+        padding: 0;
+    }
+
+    &_item_detalle{
+        list-style: none;
+        margin: .3rem 0;
+        padding: .5rem;
+        border: .5px solid #1B7111;
+    }
+
+    &_link_container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &_detalle_link{
+        /* margin: .3rem; */
+        padding: .5rem;
+        text-decoration: none;
+        text-align: center;
+        color: #1B7111;
+        font-weight: bold;
+        border: 1px solid #1B7111;
+        border-radius: 3px;
+
+        &:hover{
+            background-color: #1B7111;
+            color: white;
+        }
+    }
+    &_detalle_boton{
+        
+        text-decoration: none;
+        text-align: center;
+        color: #1B7111;
+        font-weight: bold;
+        border: 0px;
+        background-color: white;
+        
+    }
+    &_eliminar{
+        color: #1B7111;
+        cursor: pointer;
+        margin-right: .5rem;
+        font-size: 3rem;
+        width: 10%;
+        text-align: right;
+    }
+
+    &_detalle_itemImg{
+        width: 70px;
+    }
+
+    &_item_cantidad{
+        display: inline-block;
+        
+        padding: 0 10px;
+    }
+    &_item_title{
+        display: inline-block;
+        width: 50%;
+        padding: 0 10px;
+    }
+    &_item_price{
+        display: inline-block;
+        width: 12%;
+        padding: 0 10px;
+    }
+
+    &_total{
+        padding: .5rem;
+        text-align: right;
+        font-weight: bolder;
+        font-style: italic;
+        font-size: 1.3rem;
+        background-color: #1B7111;
+        color: white;
+    }
+    
+}
+
 .mensaje{
     margin: auto;
     font-size: 2rem;

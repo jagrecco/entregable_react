@@ -124,8 +124,6 @@ const ItemListContainer = (props) => {
             {
               setProd(filtrado)
             }
-
-            console.log(filtrado)
             
           })
   
