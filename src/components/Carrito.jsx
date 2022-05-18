@@ -3,6 +3,8 @@ import { useContext } from 'react'
 import { contexto } from './Contexto'
 import {Link} from 'react-router-dom'
 
+import { db } from "./firebase"
+
 const Carrito = () => {
   
   const {carrito, precioTotal, cantidadItems, vaciarCarro, eliminarProducto}=useContext(contexto)

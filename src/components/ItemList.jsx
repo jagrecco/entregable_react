@@ -8,6 +8,7 @@ const ItemList = ({productos}) => {
     return(
       <section className="productos">
         {productos.map(elemento => {
+          
           return (
             <Item key= {elemento.id} producto={elemento}/>
           )

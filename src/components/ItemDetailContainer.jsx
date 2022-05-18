@@ -4,17 +4,20 @@ import BeatLoader from "react-spinners/BeatLoader"
 
 import { useParams } from "react-router-dom"
 
+import { db } from "./firebase"
+import {collection, doc, getDoc, getDocs, addDoc} from "firebase/firestore"
 
-import oleo1 from "./assets/producto-aceite-finca-san-quinti.png"
+
+/* import oleo1 from "./assets/producto-aceite-finca-san-quinti.png"
 import oleo2 from "./assets/producto-aceite-finca-san-quinti-2.png"
 import oleo3 from "./assets/producto-aceite-finca-san-quinti-3.png"
 import oleo4 from "./assets/producto-aceite-finca-san-quinti-4.png"
 import oleo5 from "./assets/producto-aceite-finca-san-quinti-5.png"
 import oleo6 from "./assets/producto-aceto-finca-san-quinti.png"
 import oleo7 from "./assets/fruto-almendra.png"
-import oleo8 from "./assets/fruto-tomate.png"
+import oleo8 from "./assets/fruto-tomate.png" */
 
-const arrayProductos = [
+/* const arrayProductos = [
   {
   id:0,
   title: "Aceite 1/2l Vidrio",
@@ -87,7 +90,7 @@ const arrayProductos = [
     categoria:1,
     stock:2
   }
-  ]
+  ] */
 
 
 const ItemDetailContainer = () => {
@@ -99,7 +102,46 @@ const ItemDetailContainer = () => {
 
     useEffect( ()=>{
 
-        const pedido = new Promise((res)=>{
+    const catalogo=collection(db,"productos")
+    const consulta=getDocs(catalogo)
+        
+    consulta
+      .then((resultadoConsulta)=>{
+        
+        const productos=resultadoConsulta.docs.map(doc =>{
+
+          const productoId = doc.data()
+          productoId.id = doc.id
+          return productoId
+          
+        })
+
+        const itemArray=productos.filter((articulos) =>{return articulos.id==productoId})
+        
+        /* if (categoriaId == undefined)
+        {
+          setProd(productos)
+        } else
+        {
+          setProd(productos.filter((articulos) =>{return articulos.categoria==parseInt(categoriaId)}))
+          
+        } */
+
+        setCargo(false)
+
+        setProd(itemArray[0])
+
+      })
+      
+      .catch((error)=>{
+        console.log(error)
+      })
+
+      .finally(()=>{
+
+      })
+
+        /* const pedido = new Promise((res)=>{
 
             setTimeout(() => {
               res([arrayProductos])
@@ -111,7 +153,7 @@ const ItemDetailContainer = () => {
                 setCargo(false)
                 setProd(arrayProductos[productoId])
                 
-              })
+              }) */
     },[productoId])
     
     if (cargo)

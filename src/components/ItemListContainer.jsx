@@ -1,20 +1,23 @@
 import { useState, useEffect } from "react"
 import ItemList from "./ItemList"
 
+import { db } from "./firebase"
+import {collection, doc, getDoc, getDocs, addDoc} from "firebase/firestore"
 
-import oleo1 from "./assets/producto-aceite-finca-san-quinti.png"
+
+/* import oleo1 from "./assets/producto-aceite-finca-san-quinti.png"
 import oleo2 from "./assets/producto-aceite-finca-san-quinti-2.png"
 import oleo3 from "./assets/producto-aceite-finca-san-quinti-3.png"
 import oleo4 from "./assets/producto-aceite-finca-san-quinti-4.png"
 import oleo5 from "./assets/producto-aceite-finca-san-quinti-5.png"
 import oleo6 from "./assets/producto-aceto-finca-san-quinti.png"
 import oleo7 from "./assets/fruto-almendra.png"
-import oleo8 from "./assets/fruto-tomate.png"
+import oleo8 from "./assets/fruto-tomate.png" */
 
 import BeatLoader from "react-spinners/BeatLoader"
 import { useParams } from "react-router-dom"
 
-const arrayProductos = [
+/* const arrayProductos = [
   {
   id:0,
   title: "Aceite 1/2l Vidrio",
@@ -87,9 +90,9 @@ const arrayProductos = [
     categoria:1,
     stock:10
   }
-  ]
+  ] */
 
-  let filtrado=arrayProductos;
+  /* let filtrado=arrayProductos; */
 
 const ItemListContainer = (props) => {
 
@@ -99,14 +102,46 @@ const ItemListContainer = (props) => {
 
   const {categoriaId}=useParams()
   
-  if (categoriaId !== undefined)
-  {
-    filtrado=arrayProductos.filter((articulos) =>{return articulos.categoria==categoriaId});
-  }
-
   useEffect(()=>{
 
-    const pedido= new Promise((res)=>{
+    const catalogo=collection(db,"productos")
+    const consulta=getDocs(catalogo)
+
+    /* const idCat=parseInt(categoriaId) */
+        
+    consulta
+      .then((resultadoConsulta)=>{
+        
+        const productos=resultadoConsulta.docs.map(doc =>{
+
+          const productoId = doc.data()
+          productoId.id = doc.id
+          /* console.log("fue " + categoriaId + " categoria= " + productoId.categoria) */
+          return productoId
+          
+        })
+        
+        if (categoriaId == undefined)
+        {
+          setProd(productos)
+        } else
+        {
+          setProd(productos.filter((articulos) =>{return articulos.categoria==parseInt(categoriaId)}))
+          
+        }
+
+        setCarga(false)
+      })
+      
+      .catch((error)=>{
+        console.log(error)
+      })
+
+      .finally(()=>{
+
+      })
+
+    /* const pedido= new Promise((res)=>{
 
         setTimeout(() => {
           res([arrayProductos])
@@ -125,7 +160,7 @@ const ItemListContainer = (props) => {
               setProd(filtrado)
             }
             
-          })
+          }) */
   
   },[categoriaId])
 

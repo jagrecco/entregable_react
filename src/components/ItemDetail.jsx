@@ -10,10 +10,11 @@ let precioTotal=0
 const ItemDetail = ({item}) => {
 
   const {agregarProducto}=useContext(contexto)
+
+  console.log (item)
     
   const FuncionAgregar = (agregadoAlCarrito)=>{
 
-    /* console.log("Se agrearon " + agregadoAlCarrito + " al carrito") */
     mandarAlCarrito=agregadoAlCarrito
     precioTotal=item.price * mandarAlCarrito
 
@@ -26,7 +27,7 @@ const ItemDetail = ({item}) => {
       id: producto.id,
       title: producto.title,
       price: parseInt(producto.price),
-      imgUrl: producto.imgUrl,
+      imgUrl: producto.url,
       cantidad: parseInt(cantidad)}
 
     agregarProducto(p, parseInt(cantidad), parseInt(precioT))
@@ -41,7 +42,7 @@ const ItemDetail = ({item}) => {
           <article className="detalle">
             
             <h3 className="itemTitulo">{item.title}</h3>
-            <img className="detalle_itemImg" src={item.imgUrl} alt="imagen"/>
+            <img className="detalle_itemImg" src={item.url} alt="imagen"/>
             <p className="itemPrecio">${item.price}.-</p>
             <p className="detalle_detalle">{item.detalle}</p>
       
@@ -55,7 +56,7 @@ const ItemDetail = ({item}) => {
         return (
           <article className="detalle">
             <h3 className="itemTitulo">{item.title}</h3>
-            <img className="detalle_itemImg" src={item.imgUrl} alt="imagen"/>
+            <img className="detalle_itemImg" src={item.url} alt="imagen"/>
             <p className="itemPrecio">${item.price}</p>
             <p className="detalle_detalle">{item.detalle}</p>
       
