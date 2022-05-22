@@ -7,9 +7,8 @@ const Header = () => {
   return (
     <>
       <header className="header">
-        
-        {/* <Link className="header__link" to={`/categorias/${categoriaId}`}><h1 className="header__titulo">Oleo</h1></Link> */}
-        <Link className="header__link" to={`/`}><h1 className="header__titulo">Oleo</h1></Link>
+
+          <Link className="header__link" to={`/`}><h1 className="header__titulo">Oleo</h1></Link>
           
           <NavBar carrito={true}/>
 

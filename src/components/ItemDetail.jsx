@@ -11,8 +11,6 @@ const ItemDetail = ({item}) => {
 
   const {agregarProducto}=useContext(contexto)
 
-  console.log (item)
-    
   const FuncionAgregar = (agregadoAlCarrito)=>{
 
     mandarAlCarrito=agregadoAlCarrito

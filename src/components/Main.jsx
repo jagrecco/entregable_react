@@ -11,7 +11,7 @@ const Main = () => {
   const {mensaje}=useContext(contexto)
 
   return (
-    <main className="main">
+    <main className="main container">
 
       <Routes>
         <Route path="/" element={<ItemListContainer greeting={mensaje}/>}/>
