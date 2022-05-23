@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import ItemList from "./ItemList"
 
 import { db } from "./firebase"
-import {collection, doc, getDoc, getDocs, addDoc} from "firebase/firestore"
+import {collection, doc, getDoc, getDocs, addDoc, query, where} from "firebase/firestore"
 
 import BeatLoader from "react-spinners/BeatLoader"
 import { useParams } from "react-router-dom"
@@ -14,14 +14,19 @@ const ItemListContainer = (props) => {
   const [prod, setProd] = useState([])
 
   const {categoriaId}=useParams()
-  
+
   useEffect(()=>{
 
-    const catalogo=collection(db,"productos")
-    const consulta=getDocs(catalogo)
+    setCarga(true)
 
-    /* const idCat=parseInt(categoriaId) */
-        
+    const catalogo=collection(db,"productos")
+
+    const queryItem = query(catalogo, where("categoria","==", Number(categoriaId)))
+
+    let consulta=""
+    
+    categoriaId==undefined ?  consulta=getDocs(catalogo) : consulta=getDocs(queryItem)
+
     consulta
       .then((resultadoConsulta)=>{
         
@@ -29,51 +34,23 @@ const ItemListContainer = (props) => {
 
           const productoId = doc.data()
           productoId.id = doc.id
-          /* console.log("fue " + categoriaId + " categoria= " + productoId.categoria) */
           return productoId
           
         })
-        
-        if (categoriaId == undefined)
-        {
-          setProd(productos)
-        } else
-        {
-          setProd(productos.filter((articulos) =>{return articulos.categoria==parseInt(categoriaId)}))
-          
-        }
+
+        setProd(productos)
 
         setCarga(false)
       })
       
       .catch((error)=>{
+        setCarga(false)
         console.log(error)
       })
 
       .finally(()=>{
-
+        setCarga(false)
       })
-
-    /* const pedido= new Promise((res)=>{
-
-        setTimeout(() => {
-          res([arrayProductos])
-        }, 2000);
-    
-        })
-
-        pedido
-          .then(()=>{
-
-            setCarga(false)
-            if (categoriaId==undefined){
-              setProd(arrayProductos)
-            } else
-            {
-              setProd(filtrado)
-            }
-            
-          }) */
   
   },[categoriaId])
 
@@ -90,10 +67,9 @@ const ItemListContainer = (props) => {
   } else{
     
     return (
-      <>
+      
       <ItemList productos={prod}/> 
       
-      </>
     )
   }
 

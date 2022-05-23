@@ -18,33 +18,20 @@ const ItemDetailContainer = () => {
 
       const catalogo=collection(db,"productos")
 
-      const queryItem = query(catalogo, where(documentId(catalogo),"==", productoId))
+      const resultadoItem=doc(catalogo, productoId)
 
-      const consulta=getDocs(queryItem)
+      const consulta=getDoc(resultadoItem)
 
       consulta
         .then((resultadoConsulta)=>{
 
-          /* const producto=resultadoConsulta.docs.data()
-          producto.id=resultadoConsulta.docs.id */
-          /* const productoId = doc.data()
-          productoId.id = doc.id
-          return productoId */
+          let itemResultado=resultadoConsulta.data()
+
+          itemResultado.id=resultadoConsulta.id
+
+          setProd(itemResultado)
           
-          const productos=resultadoConsulta.docs.map(doc =>{
-
-            const productoId = doc.data()
-            productoId.id = doc.id
-            return productoId
-          
-          })
-
-          /* const itemArray=productos.filter((articulos) =>{return articulos.id==productoId}) */
-
-        
           setCargo(false)
-
-          setProd(productos[0])
 
       })
       
@@ -55,7 +42,6 @@ const ItemDetailContainer = () => {
       .finally(()=>{
 
       })
-
 
     },[productoId])
     

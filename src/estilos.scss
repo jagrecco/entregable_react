@@ -4,20 +4,32 @@ body {
     box-sizing: border-box;
     
     .header{
-        height: 15vh;
+        height: 120px;
         margin: 0;
         padding: 1rem 5rem;
         box-sizing: border-box;
         background-color: #9AEB7F;
         box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.56);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+
+        &_logo{
+            width: 90px;
+            height: auto;
+            filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.7));
+            margin-right: 10px;
+        }
+
+        &_contenedor{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
 
         &__titulo{
             color: #1B7111;
             font-weight: bolder;
+            padding: 0;
+            margin: 0;
         }
         &__link{
             text-decoration: none;
@@ -52,6 +64,12 @@ body {
         height: 12vh;
         background-color: #9AEB7F;
         font-weight: lighter;
+
+        &_contenedor{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 
     color: black;
@@ -106,7 +124,7 @@ body {
     }
 
     &_detalle_link{
-        /* margin: .3rem; */
+        
         padding: .5rem;
         text-decoration: none;
         text-align: center;
@@ -141,6 +159,7 @@ body {
 
     &_detalle_itemImg{
         width: 70px;
+        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.7));
     }
 
     &_item_cantidad{
@@ -238,14 +257,15 @@ body {
     gap: 1rem;
     overflow: hidden;
 }
+
 .item{
     display: flex;
     flex-direction: column;
     padding: 1rem;
     width: 18vw;
-    border: .5px solid #1B7111;
-    
+    border: .3px solid #1B7111;
     border-radius: 10px;
+
     &:hover{
         box-shadow: 4px 4px #d3e8cc;
         border: 3px solid #1B7111;
@@ -263,14 +283,12 @@ body {
         color: #1B7111;
     }
     &Img{
+        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.7));
         margin: auto;
         width: 70%;
     }
     &_detalles{
-       /*  text-decoration: none;
-        text-align: center;
-        color: #1B7111;
-        font-weight: bold; */
+       
         margin-top: .3rem;
         text-decoration: none;
         text-align: center;
@@ -303,6 +321,7 @@ body {
         font-size: .8rem;
     }
     &_itemImg{
+        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.7));
         margin: auto;
         width: 70%;
     }
