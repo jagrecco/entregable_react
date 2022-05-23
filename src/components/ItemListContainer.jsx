@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import ItemList from "./ItemList"
 
 import { db } from "./firebase"
-import {collection, doc, getDoc, getDocs, addDoc, query, where} from "firebase/firestore"
+import {collection, getDocs, query, where, orderBy} from "firebase/firestore"
 
 import BeatLoader from "react-spinners/BeatLoader"
 import { useParams } from "react-router-dom"
@@ -23,9 +23,11 @@ const ItemListContainer = (props) => {
 
     const queryItem = query(catalogo, where("categoria","==", Number(categoriaId)))
 
+    const queryOrdenado= query(catalogo, orderBy("categoria"))
+
     let consulta=""
     
-    categoriaId==undefined ?  consulta=getDocs(catalogo) : consulta=getDocs(queryItem)
+    categoriaId==undefined ?  consulta=getDocs(queryOrdenado) : consulta=getDocs(queryItem)
 
     consulta
       .then((resultadoConsulta)=>{
@@ -41,6 +43,7 @@ const ItemListContainer = (props) => {
         setProd(productos)
 
         setCarga(false)
+
       })
       
       .catch((error)=>{
