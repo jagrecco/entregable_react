@@ -79,7 +79,7 @@ const MiContexto=({children})=>{
         cantidadItems: cantidadItems,
         precioTotal: precioTotal,
         carrito: carro,
-        mensaje:"¡Bienvenidos a Oleo!",
+        mensaje:"Un segundo por favor...",
 
         agregarProducto: agregarProducto,
         eliminarProducto: eliminarProducto,

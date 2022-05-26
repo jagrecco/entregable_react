@@ -4,12 +4,17 @@ body {
     box-sizing: border-box;
     
     .header{
-        height: 120px;
+        height: 100px;
+        width: 100%;
         margin: 0;
-        padding: 1rem 5rem;
         box-sizing: border-box;
         background-color: #9AEB7F;
         box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.56);
+
+	    left: 0;
+	    top: 0;
+	    position: fixed;
+        z-index: 100;
 
         &_logo{
             width: 90px;
@@ -22,14 +27,24 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1024px;
+            padding: 0;
+            margin: auto;
         }
 
 
         &__titulo{
             color: #1B7111;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.2rem;
             font-weight: bolder;
             padding: 0;
             margin: 0;
+            transition: .5s all;
+            &:hover{
+                transform:scale(1.05);
+                transition: .5s all;
+            }
         }
         &__link{
             text-decoration: none;
@@ -38,20 +53,25 @@ body {
     }
     
     .nav__links{
-        padding: .5rem;
+        padding: .5rem 1rem;
         text-decoration: none;
         color: #1B7111;
+        font-family: 'Dancing Script';
         font-weight: bold;
+        font-size: 1.4rem;
+        transition: .5s all;
         &:hover{
-            background-color: #1B7111;
-            color:white;
-            border-radius: 15px;
+            color:#1B7111;
+            border-bottom: 4px solid #1B7111;
+            transition: .5s all;
         }
     }
     .main{
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-top: 100px;
+        max-width: 1100px;
     }
     .footer{
         display: flex;
@@ -61,7 +81,7 @@ body {
         padding: 0 1.5rem;
         margin-top: 2rem;
         text-align: center;
-        height: 12vh;
+        height: 10vh;
         background-color: #9AEB7F;
         font-weight: lighter;
 
@@ -69,6 +89,14 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        &__copy{
+            margin: 0;
+        }
+
+        &__derechos{
+            margin: 0;
         }
     }
 
@@ -190,7 +218,7 @@ body {
     
 }
 
-.mensaje{
+/* .mensaje{
     margin: auto;
     font-size: 2rem;
     margin-top: 5rem;
@@ -201,11 +229,10 @@ body {
     color:white;
     border-radius: 15px;
 }
-
+ */
 
 .contador{
-    border: .5px solid #1B7111;
-    border-radius: 5px;
+    
     width: 100%;
     margin: auto;
     margin-top: 1rem;
@@ -214,7 +241,7 @@ body {
     &_agregar{
         margin: auto;
         display: flex;
-        width: 90%;
+        width: 100%;
     }
 
     &_boton{
@@ -242,19 +269,19 @@ body {
     &_agregarAlCarrito{
         margin: auto;
         border: none;
-        width: 90%;
+        width: 100%;
         padding: .5rem;
         background-color: #9AEB7F;
     }
 }
 
 .productos{
-    padding-top: 3rem;
+    padding: 3rem 0 2rem;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 3rem;
     overflow: hidden;
 }
 
@@ -263,80 +290,140 @@ body {
     flex-direction: column;
     padding: 1rem;
     width: 18vw;
-    border: .3px solid #1B7111;
-    border-radius: 10px;
-
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    transition: .5s all;
+    
     &:hover{
-        box-shadow: 4px 4px #d3e8cc;
-        border: 3px solid #1B7111;
+        transform: scale(1.05);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        transition: .5s all;
     }
 
-    &Titulo{
+    &_Titulo{
+        margin: 0;
+        padding: 0;
         text-align: center;
-        font-weight: bold;
-        color: #1B7111;;
-    }
-    &Precio{
-        margin: .5rem ;
-        text-align: center;
-        font-weight: bold;
+        font-weight: bolder;
+        font-size: 1.6rem;
+        font-family: 'Dancing Script';
         color: #1B7111;
     }
-    &Img{
+    &_Precio{
+        margin: .5rem ;
+        text-align: center;
+        font-weight: bolder;
+        font-family: 'Dancing Script';
+        color: #1B7111;
+    }
+    &_Img{
         filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.7));
         margin: auto;
-        width: 70%;
+        width: 100%;
     }
     &_detalles{
        
-        margin-top: .3rem;
         text-decoration: none;
         text-align: center;
         color: #1B7111;
-        font-weight: bold;
-        border: 1px solid #1B7111;
+        font-weight: bolder;
+        font-family: 'Dancing Script';
+        font-size: 1.4rem;
+        border: .2px solid #1B7111;
         border-radius: 3px;
         padding: .5rem;
+        transition: .5s all;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
         &:hover{
             background-color: #1B7111;
             color: white;
+            transition: .5s all;
         }
     }
 }
 
 .detalle{
+
     display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    padding: 1rem;
-    width: 25vw;
-    border: .5px solid #1B7111;
-    box-shadow: 3px 5px #d3e8cc;
-    border-radius: 10px;
-    &_detalle{
-        margin: auto;
-        margin-top: .5rem;
-        padding: .5rem 0;
-        font-style: italic;
-        font-size: .8rem;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 1.8rem 1rem;
+    width: 100%;
+    justify-content: space-between;
+    gap: 2rem;
+    
+    &_contenedor{
+        width: 45%;
     }
+
+    &_itemTitulo{
+
+        font-weight: bolder;
+        font-family: 'Dancing Script';
+        font-size: 2rem;
+        color: #1B7111;
+    }
+
+    &_txt{
+        margin: auto;
+        margin: .5rem 0;
+        padding: 1.5rem 0;
+        font-size: 1.3rem;
+        font-family: 'Dancing Script';
+    }
+
     &_itemImg{
         filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.7));
-        margin: auto;
-        width: 70%;
+        height: 70vh;
+        width: auto;
+        transition: .5s all;
+
+        &:hover{
+            cursor: zoom-in;
+            transform: scale(1.3);
+            transition: .7s all;
+        }
     }
     &_link{
-        margin-top: .3rem;
+        
         text-decoration: none;
         text-align: center;
         color: #1B7111;
         font-weight: bold;
+        font-family: 'Dancing Script';
+        font-size: 1.4rem;
         border: 1px solid #1B7111;
         border-radius: 3px;
         padding: .5rem;
+        width: 45%;
+        transition: .5s all;
+
+        &_50{
+            
+            text-decoration: none;
+            text-align: center;
+            color: #1B7111;
+            font-weight: bold;
+            font-family: 'Dancing Script';
+            font-size: 1.4rem;
+            border: 1px solid #1B7111;
+            border-radius: 3px;
+            padding: .5rem;
+            width: 45%;
+            transition: .5s all;
+
+            &:hover{
+                background-color: #1B7111;
+                color: white;
+                transition: .5s all;
+            }
+        }
+
         &:hover{
             background-color: #1B7111;
             color: white;
+            transition: .5s all;
         }
     }
     &_Compra{
@@ -344,13 +431,20 @@ body {
         text-align: center;
         color: #1B7111;
         font-weight: bolder;
+        font-family: 'Dancing Script';
         margin: 0;
     }
-    &_Precio{
+    &_itemPrecio{
         background-color: #1B7111;
         text-align: center;
         color: white;
         font-weight: bolder;
         font-size: 1.5rem;
+        font-family: 'Dancing Script';
+    }
+
+    &_contenedor_botones{
+        display: flex;
+        justify-content: space-between;
     }
 }

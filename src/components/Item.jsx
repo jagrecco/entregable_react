@@ -1,21 +1,15 @@
 import {Link} from 'react-router-dom'
 
-const verDetalles = (cual) =>{
-console.log("paso por aca " + cual)
-}
-
 const Item = ({producto}) => {
-
-  return (
+  
+    return (
     
-    <article className="item">
-      <h3 className="itemTitulo">{producto.title}</h3>
-      <img className="itemImg" src={producto.url} alt="imagen"/>
-      <p className="itemPrecio">${producto.price}.-</p>
-      
-      <Link className="item_detalles" to={`/productos/${producto.id}`}>Detalles</Link>
-      
-    </article>
+        <article className="item">
+          <img className="item_Img" src={producto.url} alt="imagen"/>
+          <p className="item_Titulo">{producto.title}</p>
+          <p className="item_Precio">${producto.price}.-</p>
+          <Link className="item_detalles" to={`/productos/${producto.id}`}>Detalles</Link>
+        </article>
     
   )
 }

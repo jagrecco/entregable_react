@@ -6,6 +6,20 @@ import {Link} from 'react-router-dom'
 import { db } from "./firebase"
 import {collection, addDoc} from "firebase/firestore"
 
+
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+const MySwal = withReactContent(Swal)
+
+function alerta(mensaje){
+  
+  MySwal.fire({
+    title: "Resúmen de la compra",
+    text: mensaje
+
+    })
+}
+
 const fecha = new Date().toDateString()
 let itemsVenta=[]
 
@@ -52,12 +66,12 @@ const Carrito = () => {
 
         setidCompra(resultadoVenta.id)
         vaciarCarro()
-        alert("El id de su compra es " + resultadoVenta.id)
+        alerta("El id de su compra es: " + resultadoVenta.id )
         
 		  })
 		  .catch((error)=>{
         
-        console.log(error)
+        alerta("El proceso de compra falló: " + error)
         
 		  })
       

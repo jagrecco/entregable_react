@@ -38,31 +38,50 @@ const ItemDetail = ({item}) => {
         return (
 
           <article className="detalle">
-            
-            <h3 className="itemTitulo">{item.title}</h3>
+
             <img className="detalle_itemImg" src={item.url} alt="imagen"/>
-            <p className="itemPrecio">${item.price}.-</p>
-            <p className="detalle_detalle">{item.detalle}</p>
+
+            <div className="detalle_contenedor">
+
+              <h3 className="detalle_itemTitulo">{item.title}</h3>
+              <p className="detalle_txt">{item.detalle}</p>
+              <p className="detalle_itemPrecio">${item.price}.-</p>
       
-            <ItemCount stock={item.stock} initial={0} onAdd={FuncionAgregar}/>
-            <Link className="detalle_link" to={`/`}>Volver al catálogo</Link>
+              <ItemCount stock={item.stock} initial={0} onAdd={FuncionAgregar}/>
+              <div className="detalle_contenedor_botones">
+                <Link className="detalle_link" to={`/`}>Catálogo</Link>
+              </div>
+
+            </div>
+
           </article>
           
         )
       } else
       {
         return (
-          <article className="detalle">
-            <h3 className="itemTitulo">{item.title}</h3>
-            <img className="detalle_itemImg" src={item.url} alt="imagen"/>
-            <p className="itemPrecio">${item.price}</p>
-            <p className="detalle_detalle">{item.detalle}</p>
-      
-            <p className="detalle_Compra">Se agregó {mandarAlCarrito} items a la compra</p>
-            <p className="detalle_Precio">Precio total $ {precioTotal}.-</p>
 
-            <Link className="detalle_link" to={`/`}>Volver al catálogo y cancelar</Link>
-            <Link className="detalle_link" to={`/`} onClick={()=>confimaCompra(item, mandarAlCarrito, precioTotal)}>Agregar al carrito</Link>
+          <article className="detalle">
+
+            <img className="detalle_itemImg" src={item.url} alt="imagen"/>
+
+            <div className="detalle_contenedor">
+
+              <h3 className="detalle_itemTitulo">{item.title}</h3>
+              <p className="detalle_txt">{item.detalle}</p>
+              <p className="detalle_itemPrecio">${item.price}</p>
+      
+              <p className="detalle_Compra">Se agregó {mandarAlCarrito} items a la compra</p>
+              <p className="detalle_itemPrecio">Precio total $ {precioTotal}.-</p>
+
+              <div className="detalle_contenedor_botones">
+                <Link className="detalle_link_50" to={`/`}>Catálogo</Link>
+                <Link className="detalle_link_50" to={`/`} onClick={()=>confimaCompra(item, mandarAlCarrito, precioTotal)}>Agregar al Carrito</Link>
+              </div>
+
+            </div>
+            
+
           </article>
           
         )
