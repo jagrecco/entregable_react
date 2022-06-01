@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom"
 const ItemListContainer = (props) => {
 
   const mensaje=props.greeting
+  
   const [carga, setCarga] = useState([])
   const [prod, setProd] = useState([])
 

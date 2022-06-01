@@ -9,10 +9,12 @@ let precioTotal=0
 
 const ItemDetail = ({item}) => {
 
-  const {agregarProducto}=useContext(contexto)
+  const {agregarProducto, usr}=useContext(contexto)
 
   const FuncionAgregar = (agregadoAlCarrito)=>{
 
+    usr !=="" ? console.log("elusuario no" + usr) : console.log("usuario no logueado")
+    
     mandarAlCarrito=agregadoAlCarrito
     precioTotal=item.price * mandarAlCarrito
 

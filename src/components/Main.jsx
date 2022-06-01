@@ -5,12 +5,14 @@ import { contexto } from './Contexto';
 import { useContext } from "react"
 
 import {Routes, Route} from "react-router-dom"
+import Usuario from "./Usuario";
 
 const Main = () => {
 
-  const {mensaje}=useContext(contexto)
+  const mensaje= "  Un segundo por favor..."
 
   return (
+
     <main className="main container">
 
       <Routes>
@@ -18,7 +20,7 @@ const Main = () => {
         <Route path="/categorias/:categoriaId" element={<ItemListContainer greeting="Un segundo por favor..."/>}/>
         <Route path="/productos/:productoId" element={<ItemDetailContainer/>}/>
         <Route path="/carrito" element={<Carrito/>}/>
-
+        <Route path="/usuario" element={<Usuario/>}/>
       </Routes>
         
     </main>

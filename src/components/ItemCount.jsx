@@ -7,7 +7,7 @@ const [cuantosAgregar, setCuantosAgregar]=useState(initial)
 
 const maximo=stock
 
-let AgregaAlCarrito=onAdd
+/* let AgregaAlCarrito=onAdd */
 
 const SumaUno = ()=>{
 
@@ -21,7 +21,7 @@ const RestaUno = ()=>{
 
 }
 
-AgregaAlCarrito = ()=>{
+function AgregaAlCarrito (){
 
     if (cuantosAgregar>0)
     {

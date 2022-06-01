@@ -9,6 +9,11 @@ const MiContexto=({children})=>{
     const [carro, setCarro]=useState([])
     const [cantidadItems, setCantidadItems]=useState(0)
     const [precioTotal, setprecioTotal]=useState(0)
+    const [usr, setUsr]=useState('')
+
+    const usrLogIn=(usuario)=>{
+        setUsr(usuario)
+    }
 
     const agregarProducto=(producto, cantidad, precioT)=>{
 
@@ -79,12 +84,13 @@ const MiContexto=({children})=>{
         cantidadItems: cantidadItems,
         precioTotal: precioTotal,
         carrito: carro,
-        mensaje:"Un segundo por favor...",
+        usr: usr,
 
         agregarProducto: agregarProducto,
         eliminarProducto: eliminarProducto,
         enCarrito: enCarrito,
-        vaciarCarro: vaciarCarro
+        vaciarCarro: vaciarCarro,
+        usrLogIn: usrLogIn
     }
 
     return(

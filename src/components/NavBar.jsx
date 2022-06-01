@@ -1,5 +1,6 @@
 
 import CartWidjet from "./CartWidjet"
+import UsrWidjet from "./UsrWidjet"
 
 import {Link} from 'react-router-dom'
 
@@ -20,16 +21,18 @@ function NavBar(props) {
           <Link to={`/categorias/${aceites}`} className="nav__links">Aceites</Link>
           <Link to={`/categorias/${acetos}`} className="nav__links">Acetos</Link>
           <Link to={`/categorias/${frutos}`} className="nav__links">Frutos</Link>
-        
+          <UsrWidjet/>
       </nav>
     )
   } else {
+
     return (
       <nav className="nav__menu">
         <Link to={`/`} className="nav__links">Inicio</Link>
         <Link to={`/categorias/${aceites}`} className="nav__links">Aceites</Link>
         <Link to={`/categorias/${acetos}`} className="nav__links">Acetos</Link>
         <Link to={`/categorias/${frutos}`} className="nav__links">Frutos</Link>
+        <UsrWidjet/>
       </nav>
     )
   }
