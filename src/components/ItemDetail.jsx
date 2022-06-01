@@ -13,8 +13,8 @@ const ItemDetail = ({item}) => {
 
   const FuncionAgregar = (agregadoAlCarrito)=>{
 
-    usr !=="" ? console.log("elusuario no" + usr) : console.log("usuario no logueado")
-    
+    usr !=="" ? console.log("elusuario " + usr) : console.log("usuario no logueado")
+
     mandarAlCarrito=agregadoAlCarrito
     precioTotal=item.price * mandarAlCarrito
 
