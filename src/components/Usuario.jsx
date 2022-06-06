@@ -64,7 +64,7 @@ const Usuario = () => {
           })
     }
 
-    if (usr == "") {
+    if (usr === "") {
 
       return (
 

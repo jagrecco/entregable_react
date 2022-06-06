@@ -41,7 +41,7 @@ const ItemListContainer = (props) => {
 
     let consulta=""
     
-    categoriaId==undefined ?  consulta=getDocs(queryOrdenado) : consulta=getDocs(queryItem)
+    categoriaId===undefined ?  consulta=getDocs(queryOrdenado) : consulta=getDocs(queryItem)
 
     consulta
       .then((resultadoConsulta)=>{

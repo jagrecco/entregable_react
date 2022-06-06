@@ -1,5 +1,5 @@
 import React from 'react'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { contexto } from './Contexto'
 import {Link} from 'react-router-dom'
 
@@ -20,13 +20,10 @@ function alerta(mensaje){
 }
 
 const fecha = new Date().toDateString()
-let itemsVenta=[]
 
-const Carrito = () => {
-
-  const [idCompra, setidCompra] = useState("")
+function Carrito () {
   
-  const {usr,carrito, precioTotal, cantidadItems, vaciarCarro, eliminarProducto}=useContext(contexto)
+  const {usr, carrito, precioTotal, vaciarCarro, eliminarProducto}=useContext(contexto)
   
   function vaciarCarrito(){
     vaciarCarro()
@@ -63,7 +60,6 @@ const Carrito = () => {
 
       .then((resultadoVenta)=>{
 
-        setidCompra(resultadoVenta.id)
         vaciarCarro()
         alerta("El id de su compra es: " + resultadoVenta.id )
         
@@ -108,6 +104,7 @@ const Carrito = () => {
               <Link className="carro_detalle_link" to={`/`}>Seguir comprando</Link>
               <Link className="carro_detalle_link" to={`/`} onClick={()=>vaciarCarrito()}>Vaciar Carrito</Link>
               <Link className="carro_detalle_link" to={`/`} onClick={()=>terminarCompra()}>Terminar Compra</Link>
+              
           </div>
 
         </div>

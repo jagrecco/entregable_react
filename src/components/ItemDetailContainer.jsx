@@ -5,7 +5,8 @@ import BeatLoader from "react-spinners/BeatLoader"
 import { useParams } from "react-router-dom"
 
 import { db } from "./firebase"
-import {collection, doc, getDoc, getDocs, addDoc, where, query, documentId} from "firebase/firestore"
+
+import {collection, doc, getDoc} from "firebase/firestore"
 
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
