@@ -7,6 +7,20 @@ import { useParams } from "react-router-dom"
 import { db } from "./firebase"
 import {collection, doc, getDoc, getDocs, addDoc, where, query, documentId} from "firebase/firestore"
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+const MySwal = withReactContent(Swal)
+
+function alerta(mensaje){
+  
+  MySwal.fire({
+    title: "Resúmen de la compra",
+    text: mensaje
+
+    })
+}
+
+
 const ItemDetailContainer = () => {
 
     const [cargo, setCargo] = useState([])
@@ -23,6 +37,7 @@ const ItemDetailContainer = () => {
       const consulta=getDoc(resultadoItem)
 
       consulta
+      
         .then((resultadoConsulta)=>{
 
           let itemResultado=resultadoConsulta.data()
@@ -36,7 +51,9 @@ const ItemDetailContainer = () => {
       })
       
       .catch((error)=>{
-        console.log("Error " + error)
+
+        alerta("Error " + error)
+
       })
 
       .finally(()=>{

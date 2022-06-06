@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom'
 import { db } from "./firebase"
 import {collection, addDoc} from "firebase/firestore"
 
-
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 const MySwal = withReactContent(Swal)
@@ -27,7 +26,7 @@ const Carrito = () => {
 
   const [idCompra, setidCompra] = useState("")
   
-  const {carrito, precioTotal, cantidadItems, vaciarCarro, eliminarProducto}=useContext(contexto)
+  const {usr,carrito, precioTotal, cantidadItems, vaciarCarro, eliminarProducto}=useContext(contexto)
   
   function vaciarCarrito(){
     vaciarCarro()
@@ -48,9 +47,9 @@ const Carrito = () => {
     const ventaDetalle={
 
       buyer:{
-        name: "Pepe",
+        name: usr,
         phone: "00 0000 0000",
-        email: "nada@nada.com"
+        email: usr
       },
   
       items: itemsVenta,

@@ -3,6 +3,19 @@ import {Link} from 'react-router-dom'
 import { useState, useContext } from "react"
 import { contexto } from './Contexto'
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+const MySwal = withReactContent(Swal)
+
+function alerta(mensaje){
+  
+  MySwal.fire({
+    title: "Oleo",
+    text: mensaje
+
+    })
+}
+
 
 let mandarAlCarrito=0
 let precioTotal=0
@@ -13,12 +26,16 @@ const ItemDetail = ({item}) => {
 
   const FuncionAgregar = (agregadoAlCarrito)=>{
 
-    usr !=="" ? console.log("elusuario " + usr) : console.log("usuario no logueado")
+    if (usr!==""){
 
-    mandarAlCarrito=agregadoAlCarrito
-    precioTotal=item.price * mandarAlCarrito
+      mandarAlCarrito=agregadoAlCarrito
+      precioTotal=item.price * mandarAlCarrito
+      setMuestraContador(false)
 
-    setMuestraContador(false)
+    } else
+    {
+      alerta("Es necesario estar logueado para agrear elementos al carrito")
+    }
   }
 
   const confimaCompra=(producto, cantidad, precioT)=>{

@@ -7,6 +7,19 @@ import {collection, getDocs, query, where, orderBy} from "firebase/firestore"
 import BeatLoader from "react-spinners/BeatLoader"
 import { useParams } from "react-router-dom"
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+const MySwal = withReactContent(Swal)
+
+function alerta(mensaje){
+  
+  MySwal.fire({
+    title: "Resúmen de la compra",
+    text: mensaje
+
+    })
+}
+
 const ItemListContainer = (props) => {
 
   const mensaje=props.greeting
@@ -49,7 +62,7 @@ const ItemListContainer = (props) => {
       
       .catch((error)=>{
         setCarga(false)
-        console.log(error)
+        alerta("Error " + error)
       })
 
       .finally(()=>{

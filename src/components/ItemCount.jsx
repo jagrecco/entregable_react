@@ -7,18 +7,12 @@ const [cuantosAgregar, setCuantosAgregar]=useState(initial)
 
 const maximo=stock
 
-/* let AgregaAlCarrito=onAdd */
-
 const SumaUno = ()=>{
-
     cuantosAgregar < maximo && setCuantosAgregar(cuantosAgregar+1)
-
 }
 
 const RestaUno = ()=>{
-
     cuantosAgregar > initial && setCuantosAgregar(cuantosAgregar-1)
-
 }
 
 function AgregaAlCarrito (){
@@ -42,7 +36,6 @@ function AgregaAlCarrito (){
             <div className="contador_agregarBoton">
                 {<button className="contador_agregarAlCarrito" onClick={AgregaAlCarrito}><span className="material-icons iconos">add_shopping_cart</span></button>}
             </div>
-
 
     </div>
 

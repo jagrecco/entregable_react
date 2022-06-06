@@ -20,8 +20,6 @@ function alerta(mensaje){
     })
 }
 
-//alerta("El id de su compra es: " + resultadoVenta.id )
-
 const Usuario = () => {
 
     const {usrLogIn, usr}=useContext(contexto)

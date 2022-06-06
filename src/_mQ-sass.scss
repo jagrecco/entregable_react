@@ -1,0 +1,23 @@
+/* mixin que genera todos los media queries - breakpoints bootstrap */
+
+@mixin pantalla($ancho){
+	@if $ancho=="telefono" {
+	@media (max-width:576px) {@content;}
+
+	} @else if $ancho=="tablet" {
+	@media (min-width:577px) {@content;}
+
+	} @else if $ancho=="pc-chica" {
+	@media (min-width: 768px) {@content;}
+
+	} @else if $ancho=="pc-media" {
+	@media (min-width: 992px) {@content;}
+
+	} @else if $ancho=="pc-xl" {
+	@media (min-width: 1200px) {@content;}
+
+	} @else if $ancho=="pc-xxl" {
+	@media (min-width: 1440px) {@content;}
+	}
+
+}

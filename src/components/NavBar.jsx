@@ -32,7 +32,7 @@ function NavBar(props) {
         <Link to={`/categorias/${aceites}`} className="nav__links">Aceites</Link>
         <Link to={`/categorias/${acetos}`} className="nav__links">Acetos</Link>
         <Link to={`/categorias/${frutos}`} className="nav__links">Frutos</Link>
-        <UsrWidjet/>
+        
       </nav>
     )
   }
