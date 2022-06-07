@@ -21,7 +21,7 @@ const MiContexto=({children})=>{
 
         if (estaEnCarrito){
 
-            let index = carro.findIndex( elemento => elemento.id == producto.id);
+            let index = carro.findIndex( elemento => elemento.id === producto.id);
             
             const carroTemporal=carro.slice(0)
 
@@ -50,14 +50,12 @@ const MiContexto=({children})=>{
 
     const eliminarProducto=(idProducto)=>{
 
-        let index = carro.findIndex( elemento => elemento.id == idProducto)
+        let index = carro.findIndex( elemento => elemento.id === idProducto)
         
         let cant=carro[index].cantidad
         let precio=carro[index].price
         
         let carroTemporal=carro.slice(0)
-
-        let carritoTemporal=carroTemporal.splice(index,1)
 
         setCarro(carroTemporal)
 
@@ -69,7 +67,7 @@ const MiContexto=({children})=>{
     
     const enCarrito=(producto)=>{
 
-       const estaEnCarrito=carro.filter(elemento => elemento.id==producto.id).length
+       const estaEnCarrito=carro.filter(elemento => elemento.id===producto.id).length
        return estaEnCarrito
 
     }

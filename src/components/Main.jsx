@@ -1,8 +1,6 @@
 import ItemListContainer from "./ItemListContainer";
 import ItemDetailContainer from "./ItemDetailContainer";
 import Carrito from "./Carrito";
-import { contexto } from './Contexto';
-import { useContext } from "react"
 
 import {Routes, Route} from "react-router-dom"
 import Usuario from "./Usuario";

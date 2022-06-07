@@ -4,7 +4,7 @@ import Item from "./Item"
 
 const ItemList = ({productos}) => {
   
-  {
+  
     return(
       <section className="productos">
         {productos.map(elemento => {
@@ -15,7 +15,7 @@ const ItemList = ({productos}) => {
         })}
       </section>
     )
-  }
+  
 }
   
 export default ItemList

@@ -6,7 +6,7 @@ const UsrWidjet = () => {
 
     const {usr}=useContext(contexto)
 
-    if (usr=="")
+    if (usr==="")
     {
         return (
             
